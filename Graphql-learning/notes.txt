@@ -1,3 +1,7 @@
 Query language for APIs.
 It's a query language. 
 Can ask for exactly what you want
+Mutation - updating /adding data in GraphQL
+Resolver - Gives output of Mutation and query
+Scalar types - Basic types in Graphql. Int, Float, String, Boolean
+Enumeration Types - specific set of data what a field takes and only restrict to it
