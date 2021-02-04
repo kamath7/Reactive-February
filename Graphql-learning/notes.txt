@@ -5,3 +5,80 @@ Mutation - updating /adding data in GraphQL
 Resolver - Gives output of Mutation and query
 Scalar types - Basic types in Graphql. Int, Float, String, Boolean
 Enumeration Types - specific set of data what a field takes and only restrict to it
+
+# mutation {
+#   createFriend(input: {firstName: "Max", lastName: "Payne", email: "max@lalle.com", age: 34}) {
+#     id
+#     firstName
+#     age
+#   }
+# }
+mutation {
+  updateFriend(input: { 
+  id: "601c232c8a65a612e08e62e2"
+  age: 69
+  }) {
+    id 
+    age
+    firstName
+  }
+}
+mutation {
+  deleteFriend(id:"601c232c8a65a612e08e62e2")
+}
+# query{
+#   getFriends {
+#     id
+#     firstName
+#     lastName
+#   }
+# }
+# query {
+#   getAliens{
+#     firstName
+#     planet
+#   }
+# }
+query {
+  getOneFriend(id:"601c1628caf00e10dfde074c"){
+    id,
+    firstName
+  }
+}
+
+Queries with aliases
+
+query {
+  friend:getOneFriend(id:"601c1628caf00e10dfde074c"){
+ 		firstName
+    lastName
+    age
+  }
+  aliens: getAliens {
+    firstName
+    planet
+  } 
+  friends:getFriends{
+    firstName
+    lastName
+  }
+}
+
+Queries with fragments
+Use case is similar to aliases 
+
+query {
+  one: getOneFriend(id:"601c1610caf00e10dfde074b"){
+    ...friendFragment
+  }
+  two:getOneFriend(id:"601c2b28693c6e1558180128"){
+    ...friendFragment
+  }
+}
+
+ 
+fragment friendFragment on Friend {
+  lastName
+  firstName
+  age
+}
