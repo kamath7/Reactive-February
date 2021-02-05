@@ -4,3 +4,8 @@ CMS - Page generated upon request.
 
 Gatsby is CMS + React (HTML and CSS also ) and create HTML and react-magic
 
+Important commands
+
+gatsby develop -H 0.0.0.0 (opening localhost on different machine)
+
+gatsby clean - cleaning cache and build 
