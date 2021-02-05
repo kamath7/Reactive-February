@@ -1,0 +1,6 @@
+Gatsby - Static site generator built on react
+
+CMS - Page generated upon request. 
+
+Gatsby is CMS + React (HTML and CSS also ) and create HTML and react-magic
+
